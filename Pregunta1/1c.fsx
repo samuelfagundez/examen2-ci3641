@@ -1,11 +1,11 @@
 type Arbol =
-    | Leaf of int
-    | Branch of int * Arbol * Arbol
+    | Hoja of int
+    | Rama of int * Arbol * Arbol
 
 let rec esMinHeapBalanceado tree =
     match tree with
-    | Leaf _ -> true
-    | Branch (n, Leaf _, Leaf _) -> true
-    | Branch (n, Leaf _, Branch (n2, l2l, l2r)) -> n < n2 && esMinHeapBalanceado (Branch (n2, l2l, l2r))
-    | Branch (n, Branch (n1, l1l, l1r), Leaf _) -> n < n1 && esMinHeapBalanceado (Branch (n1, l1l, l1r))
-    | Branch (n, Branch (n1, l1l, l1r), Branch (n2, l2l, l2r)) -> n < n1 && n < n2 && esMinHeapBalanceado (Branch (n1, l1l, l1r)) && esMinHeapBalanceado (Branch (n2, l2l, l2r))
+    | Hoja _ -> true
+    | Rama (n, Hoja _, Hoja _) -> true
+    | Rama (n, Hoja _, Rama (n2, l2l, l2r)) -> n < n2 && esMinHeapBalanceado (Rama (n2, l2l, l2r))
+    | Rama (n, Rama (n1, l1l, l1r), Hoja _) -> n < n1 && esMinHeapBalanceado (Rama (n1, l1l, l1r))
+    | Rama (n, Rama (n1, l1l, l1r), Rama (n2, l2l, l2r)) -> n < n1 && n < n2 && esMinHeapBalanceado (Rama (n1, l1l, l1r)) && esMinHeapBalanceado (Rama (n2, l2l, l2r))
