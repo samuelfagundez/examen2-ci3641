@@ -1,4 +1,3 @@
-
 type Church = 
     | Cero
     | Suc of Church
