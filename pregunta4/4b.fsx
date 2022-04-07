@@ -1,3 +1,5 @@
+open System
+
 let rec obtenerCasosBase n a b c = 
     if n - 12 <= 0 then [| c; b; a |]
     else obtenerCasosBase (n-4) (n-4) (n-8) (n-12)
@@ -23,4 +25,6 @@ let F34 n =
             else n
         else -1
 
-printfn "%d" (F34 55)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")
+printfn "%d" (F34 10000)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")

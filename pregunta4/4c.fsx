@@ -1,3 +1,5 @@
+open System
+
 let obtenerCasosBase n = 
     let mutable aux = n
     let mutable a = 0
@@ -40,4 +42,6 @@ let F34 n =
             else n
         else -1
 
-printfn "%d" (F34 55)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")
+printfn "%d" (F34 10000)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")

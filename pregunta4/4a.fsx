@@ -1,3 +1,5 @@
+open System
+
 let rec F34 n =
     if n >= 0
         then
@@ -5,4 +7,6 @@ let rec F34 n =
             else n
         else -1
 
-printfn "%d" (F34 55)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")
+printfn "%d" (F34 25)
+printfn "%s" ((DateTime.Now).ToString "HH:mm:ss.fff")
